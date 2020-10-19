@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0NO-A5-51p">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="EUh-4o-z4z">
+            <objects>
+                <navigationController id="0NO-A5-51p" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HSW-TU-ahr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="24L-iv-eOV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZx-tb-mog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="-21"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5ko-Xi-ZOL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="aRX-Ja-B9N">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="186"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="RQa-3x-IWi">
+                                        <rect key="frame" x="0.0" y="196" width="414" height="186"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="2SI-NX-ptC">
+                                        <rect key="frame" x="0.0" y="392" width="414" height="186"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="hB3-Md-4iP">
+                                        <rect key="frame" x="0.0" y="588" width="414" height="186"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5ko-Xi-ZOL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4R4-AA-2K1"/>
+                            <constraint firstItem="5ko-Xi-ZOL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jji-K8-Yod"/>
+                            <constraint firstItem="5ko-Xi-ZOL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gi5-i3-g7T"/>
+                            <constraint firstItem="5ko-Xi-ZOL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jm8-EP-bvM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IiC-uo-e01">
+                        <leftBarButtonItems>
+                            <barButtonItem title="loadSync" id="FAd-8L-bMt">
+                                <connections>
+                                    <action selector="actionLoadSync:" destination="BYZ-38-t0r" id="5zw-aJ-USL"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="loadAsync" id="FEl-Of-NcV">
+                                <connections>
+                                    <action selector="actionLoadAsync:" destination="BYZ-38-t0r" id="S3q-36-3bv"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="del" id="b6L-JI-Zd2">
+                            <connections>
+                                <action selector="actionDel:" destination="BYZ-38-t0r" id="ygI-bS-XKB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView1" destination="aRX-Ja-B9N" id="nUY-qR-zaZ"/>
+                        <outlet property="imageView2" destination="RQa-3x-IWi" id="ldF-Tg-hEB"/>
+                        <outlet property="imageView3" destination="2SI-NX-ptC" id="31X-Nt-syf"/>
+                        <outlet property="imageView4" destination="hB3-Md-4iP" id="CiA-VO-ovn"/>
+                        <outletCollection property="arrrayImageViews" destination="2SI-NX-ptC" id="nBn-fp-K09"/>
+                        <outletCollection property="arrrayImageViews" destination="aRX-Ja-B9N" id="9On-4v-aal"/>
+                        <outletCollection property="arrrayImageViews" destination="RQa-3x-IWi" id="GHT-gG-xzT"/>
+                        <outletCollection property="arrrayImageViews" destination="hB3-Md-4iP" id="syU-Tg-fKS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="242" y="91"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="580" height="435"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
